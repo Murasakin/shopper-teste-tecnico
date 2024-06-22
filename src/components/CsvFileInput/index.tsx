@@ -30,10 +30,12 @@ function CsvFileInput({ CSVHandler, alertError }: CsvFileInputProps) {
         return;
       }
       const file = target.files[0];
+      if (!file) {
+        alertErrorProxy("Nenhum arquivo selecionado!");
+        return;
+      }
       if (!file.name.endsWith(".csv")) {
-        alertErrorProxy(
-          "O arquivo deve ter o formato CSV e terminar com extensão .csv!"
-        );
+        alertErrorProxy("O arquivo deve ter o formato CSV e terminar com extensão .csv!");
         return;
       }
       setSelectedFile(file);
@@ -60,13 +62,7 @@ function CsvFileInput({ CSVHandler, alertError }: CsvFileInputProps) {
   return (
     <form className={styles["container"]}>
       <h3>Selecione o arquivo CSV:</h3>
-      <input
-        ref={inputRef}
-        type="file"
-        accept=".csv"
-        className={styles["file-input"]}
-        onChange={onFileChange}
-      />
+      <input ref={inputRef} type="file" accept=".csv" className={styles["file-input"]} onChange={onFileChange} />
       <div className={styles["selected-file-wrapper"]}>
         <button className="button" onClick={onSearchFilesClick}>
           {selectedFile ? "Trocar arquivo..." : "Procurar..."}

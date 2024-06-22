@@ -12,12 +12,6 @@
   align-items: center;
 }
 
-.selected-file-wrapper button {
-  min-width: 200px;
-  max-height: 50px;
-  margin: 0;
-}
-
 .selected-file-wrapper p {
   font-size: 1rem;
   margin: 0;
