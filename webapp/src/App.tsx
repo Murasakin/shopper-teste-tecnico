@@ -1,12 +1,15 @@
 import "./App.css";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
+import SelectedFileContextProvider from "./context/SelectedFileContext";
 
 function App() {
   return (
     <>
       <Header />
-      <MainContent />
+      <SelectedFileContextProvider>
+        <MainContent />
+      </SelectedFileContextProvider>
     </>
   );
 }
