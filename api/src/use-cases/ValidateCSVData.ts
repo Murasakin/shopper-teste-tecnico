@@ -156,8 +156,6 @@ class ValidateCSVData {
           sum += value[1] * (newComponentPrice - currentComponentPrice);
         }
       });
-      console.log(diffNewPackPrice);
-      console.log(sum);
       if (sum !== diffNewPackPrice) {
         item.error =
           "Para reajustar o preço de um pacote, deve-se constar também preços de reajuste válidos " +

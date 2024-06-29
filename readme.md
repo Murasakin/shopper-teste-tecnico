@@ -8,15 +8,17 @@ docker compose up
 ```
 
 3. Na pasta /api, copie o conteúdo de .env.example para um arquivo .env
-4. Na mesma pasta, use o comando abaixo para subir a API
+4. Na mesma pasta, use os comandos abaixo para subir a API
 
 ```
+npm install
 npm run dev
 ```
 
-5. Na pasta /webapp, use o comando abaixo para subir o front-end:
+5. Na pasta /webapp, use os comandos abaixo para subir o front-end:
 
 ```
+npm install
 npm run dev
 ```
 
