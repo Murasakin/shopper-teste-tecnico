@@ -1,0 +1,17 @@
+.file-input {
+  display: none;
+}
+
+.selected-file-wrapper {
+  display: flex;
+}
+
+.selected-file-wrapper button {
+  max-width: 50px;
+}
+
+.selected-file-wrapper p {
+  font-size: 1rem;
+  margin: 0;
+  max-width: 180px;
+}

@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.action-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.filename {
+  margin-top: calc(-1rem + 4px);
+  padding: 1rem 0.5rem;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filename p {
+  margin: 0;
+  /* display: inline; */
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+button.update-button {
+  background: var(--color-emphasis);
+}
+
+button.update-button:hover {
+  background: var(--color-emphasis);
+  box-shadow: 0 0 0 3px var(--color-emphasis-light), 0 0 0 4px var(--color-emphasis);
+}
