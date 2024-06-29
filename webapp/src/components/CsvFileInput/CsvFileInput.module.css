@@ -1,19 +1,17 @@
-.container {
-  margin-top: 2rem;
-}
-
 .file-input {
   display: none;
 }
 
 .selected-file-wrapper {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+}
+
+.selected-file-wrapper button {
+  max-width: 50px;
 }
 
 .selected-file-wrapper p {
   font-size: 1rem;
   margin: 0;
-  max-height: 50px;
+  max-width: 180px;
 }
