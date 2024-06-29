@@ -1,5 +1,9 @@
-import ProductsModel from "../model/ProductModel";
+import ProductPriceUpdateModel from "../model/ProductPriceUpdateModel";
+import ProductsWithPacksModel from "../model/ProductsWithPacksModel";
 
-export default interface ProductRepository {
-  listManyByCode: (codes: number[]) => Promise<Map<number, Omit<ProductsModel, "code">>>;
+export default interface ProducstRepository {
+  listProductsWithPacksByCode: (codes: number[]) => Promise<Map<number, ProductsWithPacksModel>>;
+  listPacksByProductCode(codes: number[]): Promise<Map<number, PackModel[]>>;
+  saveUpdates(priceUpdates: ProductPriceUpdateModel[]): Promise<string>;
+  commitPriceUpdates(updateId: string): Promise<void>;
 }
