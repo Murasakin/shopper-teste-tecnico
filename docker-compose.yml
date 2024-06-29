@@ -1,19 +1,4 @@
 services:
-  frontend:
-    build:
-      context: ./webapp
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-
-  backend:
-    build:
-      context: ./api
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
   db:
     image: mysql
     container_name: db_container
