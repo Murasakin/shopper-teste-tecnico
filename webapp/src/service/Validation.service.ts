@@ -1,10 +1,11 @@
 import api from "../api";
+import { ParsedCSVStruct, ValidationResultStruct } from "../interface";
 
 class ValidationService {
-  static validateCsvFileData = async (file: File) => {
+  static validateCsvFileData = async (csv: ParsedCSVStruct): Promise<ValidationResultStruct> => {
     try {
-      const response = await api.post("/validateBatchReadjustments", file, {
-        headers: { "Content-Type": "multipart/form-data" },
+      const response = await api.post("/validatecsvdata", csv, {
+        headers: { "Content-Type": "application/json" },
       });
       return response.data;
     } catch (error: any) {

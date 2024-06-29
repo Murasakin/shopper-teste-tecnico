@@ -1,7 +1,7 @@
 import Papa from "papaparse";
-import { BatchReadjustmentStruct } from "../interface";
+import { ParsedCSVStruct } from "../interface";
 
-export default async function parseCSV(csvFile: File): Promise<BatchReadjustmentStruct> {
+export default async function parseCSV(csvFile: File): Promise<ParsedCSVStruct> {
   return new Promise((resolve, reject) => {
     try {
       Papa.parse(csvFile, {
@@ -12,9 +12,8 @@ export default async function parseCSV(csvFile: File): Promise<BatchReadjustment
             reject("O arquivo CSV não pode estar vazio e a primeira linha deve ser um cabeçalho!");
             return;
           }
-          const { fields } = results.meta;
           const data = results.data as Record<string, string>[];
-          resolve({ fields, data });
+          resolve({ columns: results.meta.fields, data });
         },
       });
     } catch (e: any) {

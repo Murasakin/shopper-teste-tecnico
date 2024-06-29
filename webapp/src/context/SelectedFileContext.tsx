@@ -11,7 +11,7 @@ export const SelectedFileContext = createContext<SelectedFileContextType>({
 });
 
 function SelectedFileContextProvider({ children }: { children: ReactElement }) {
-  const [selectedFile, setSelectedFile] = useState<File>();
+  const [selectedFile, setSelectedFile] = useState<File | undefined>();
 
   return (
     <SelectedFileContext.Provider value={{ selectedFile, changeSelectedFile: (file) => setSelectedFile(file) }}>
