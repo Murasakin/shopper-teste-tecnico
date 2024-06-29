@@ -26,8 +26,11 @@ function CsvFileInput({ alertError }: CsvFileInputProps) {
         return;
       }
       changeSelectedFile(file);
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
     },
-    [selectedFile, alertError]
+    [selectedFile, alertError, inputRef]
   );
 
   const onSearchFilesClick = useCallback(
